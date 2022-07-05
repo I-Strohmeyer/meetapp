@@ -7,7 +7,7 @@ See upcoming events in a city close to you!
 # Tech-Stack:
 
 - React
-- AWS (later)
+- AWS (later, soon)
 
 # User Stories
 
