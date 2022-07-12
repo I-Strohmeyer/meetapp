@@ -1,7 +1,87 @@
+body {
+  background-color: #ffcdbe;
+}
+
+/* other colors
+pastel orange: #FFCDBE
+bright orange: ##FF5E2C
+blue: #009EEC
+
+
+*/
+
 .App {
   padding: 20px;
 }
 
+/* Header */
+.Header {
+  margin-bottom: 20px;
+}
+
+.Header h1 {
+  font-family: "Pacifico", cursive;
+  color: white;
+  text-shadow: 1px 1px #ff5e2c;
+}
+
+.Header h1 span {
+  color: #009eec;
+  text-shadow: none;
+}
+
+/* Citysearch */
+.CitySearch {
+  margin-bottom: 20px;
+}
+
 .city {
   width: 100%;
+  padding: 4px;
+  padding-left: 8px;
+  border-radius: 8px;
+  border: 1px solid #ff5e2c;
+  color: #ff5e2c;
+}
+
+.city:focus {
+  border: 2px solid #009eec;
+}
+
+/* Numbere of Events */
+.NumberOfEvents {
+  margin-bottom: 20px;
+}
+
+.eventsnumber_input {
+  border: none;
+  padding: 4px;
+  border-radius: 8px;
+  border: 1px solid #ff5e2c;
+  color: #ff5e2c;
+}
+
+.EventList {
+  padding: 0;
+  list-style: none;
+}
+
+.EventList li {
+  border-radius: 4px 4px 0 30px;
+  color: white;
+  background-color: white;
+}
+
+/* .EventList li:nth-child(3n - 2)  */
+
+.EventList li:nth-child(even) .summary {
+  color: #009eec;
+}
+
+.EventList li:nth-child(odd) .summary {
+  color: #ff5e2c;
+}
+
+.event {
+  padding: 12px;
 }

@@ -6,6 +6,8 @@
  * It will also remove all duplicates by creating another new array using the spread operator and spreading a Set.
  * The Set will remove all duplicates from the array.
  */
+import axios from "axios";
+
 import { mockData } from "./mock-data";
 
 export const extractLocations = (events) => {
