@@ -16,7 +16,7 @@ export class NumberOfEvents extends Component {
   render() {
     return (
       <div className="NumberOfEvents">
-        <label for="number">Select number of events</label>
+        <label htmlFor="number">Select number of events</label>
         <input
           className="eventsnumber_input"
           name="number"
@@ -24,7 +24,6 @@ export class NumberOfEvents extends Component {
           type="number"
           min="1"
           max="32"
-          step="any"
           value={this.state.eventsNumber}
           onChange={this.updateNumOfEvents}
         ></input>

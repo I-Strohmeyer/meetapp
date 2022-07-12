@@ -21,12 +21,16 @@ export class CitySearch extends Component {
     this.setState({
       query: suggestion,
     });
+
+    this.props.updateEvents(suggestion);
   };
 
   render() {
+    console.log(this.props.locations);
     return (
       <div className="CitySearch">
         <input
+          placeholder="Search for a city"
           type="text"
           className="city"
           value={this.state.query}
@@ -41,7 +45,7 @@ export class CitySearch extends Component {
               {suggestion}
             </li>
           ))}
-          <li key="all">
+          <li onClick={() => this.handleItemClicked("all")}>
             <b>See all cities</b>
           </li>
         </ul>
