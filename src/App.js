@@ -6,6 +6,7 @@ import { NumberOfEvents } from "./NumberOfEvents";
 import { getEvents, extractLocations } from "./api";
 import { Header } from "./Header";
 
+import "./nprogress.css";
 import "./App.css";
 
 class App extends Component {
@@ -43,11 +44,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <CitySearch
-          locations={this.state.locations}
-          updateEvents={this.updateEvents}
-        />
+        <div className="topwrapper">
+          <Header />
+          <CitySearch
+            locations={this.state.locations}
+            updateEvents={this.updateEvents}
+          />
+        </div>
+
         <NumberOfEvents />
         <EventList events={this.state.events} />
       </div>
