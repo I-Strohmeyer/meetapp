@@ -5,12 +5,13 @@ export class NumberOfEvents extends Component {
     eventsNumber: 32,
   };
 
-  updateNumOfEvents = (e) => {
+  handleNumOfEvents = (e) => {
     //let updatedNumber = parseInt(e.target.value);
     let updatedNumber = e.target.value;
     this.setState({
       eventsNumber: updatedNumber,
     });
+    this.props.updateNumberEvents(updatedNumber);
   };
 
   render() {
@@ -27,7 +28,7 @@ export class NumberOfEvents extends Component {
             min="1"
             max="32"
             value={this.state.eventsNumber}
-            onChange={this.updateNumOfEvents}
+            onChange={this.handleNumOfEvents}
           ></input>
         </div>
       </div>

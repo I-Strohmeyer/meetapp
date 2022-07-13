@@ -13,6 +13,7 @@ class App extends Component {
   state = {
     events: [],
     locations: [],
+    eventsNumber: 32,
   };
 
   componentDidMount() {
@@ -41,6 +42,13 @@ class App extends Component {
     });
   };
 
+  updateNumberEvents = (eventsNumber) => {
+    this.setState({
+      eventsNumber,
+    });
+    console.log(eventsNumber);
+  };
+
   render() {
     return (
       <div className="App">
@@ -52,7 +60,7 @@ class App extends Component {
           />
         </div>
 
-        <NumberOfEvents />
+        <NumberOfEvents updateNumberEvents={this.updateNumberEvents} />
         <EventList events={this.state.events} />
       </div>
     );
