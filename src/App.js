@@ -23,7 +23,6 @@ class App extends Component {
       if (this.mounted) {
         this.setState({ events, locations: extractLocations(events) });
       }
-      console.log(events);
     });
   }
 
@@ -64,7 +63,6 @@ class App extends Component {
     this.setState({
       eventsNumber,
     });
-    console.log(eventsNumber);
     this.updateEvents(undefined, eventsNumber);
   };
 

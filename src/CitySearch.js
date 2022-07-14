@@ -31,7 +31,7 @@ export class CitySearch extends Component {
     return (
       <div className="CitySearch">
         <input
-          placeholder="Search for a city"
+          placeholder="Search events by city"
           type="text"
           className="city"
           value={this.state.query}
