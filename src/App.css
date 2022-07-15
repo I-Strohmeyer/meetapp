@@ -112,6 +112,11 @@ blue: #009EEC
   text-align: center;
 }
 
+.Alert {
+  text-align: center;
+  padding-bottom: 8px;
+}
+
 .EventList {
   padding: 0;
   list-style: none;
