@@ -5,6 +5,7 @@ import { CitySearch } from "./CitySearch";
 import { NumberOfEvents } from "./NumberOfEvents";
 import { getEvents, extractLocations } from "./api";
 import { Header } from "./Header";
+import { NetworkAlert } from "./Alert";
 
 import "./nprogress.css";
 import "./App.css";
@@ -15,6 +16,8 @@ class App extends Component {
     locations: [],
     eventsNumber: 32,
     selectedLocations: "all",
+    alertText:
+      "It looks like you are currently offline. You will still be able to use the App.",
   };
 
   componentDidMount() {
@@ -69,6 +72,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        {!navigator.onLine && <NetworkAlert text={this.state.alertText} />}
+
         <div className="topwrapper">
           <Header />
           <CitySearch
