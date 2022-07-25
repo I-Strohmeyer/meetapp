@@ -1,15 +1,22 @@
-# MeetApp
+# MeetUp App
 
-Meet up App
+## Description
 
-See upcoming events in a city close to you!
+The Meetup App - the place to be.
+Also known as a progressive web app built with React. It uses serverless functions,
+test-driven-development and the Google Calender API while striving to provide a pleasing experience for the user.
 
-# Tech-Stack:
+## Project requirements:
 
-- React
-- AWS (later, soon)
+- Build App using React
+- TDD Approach
+- Fetch calendar events via Google Caléndar API and OAuth2 flow
+- Use serverless functions (AWS) for the authorization process
+- Make sure the App fulfills the PWA reqs from Lighthouse
+- App can be used offline
+- Add charts for data visualization
 
-# User Stories
+## User Stories
 
 Feature 2 - Show/hide an event's details:
 As a “User” I should be able to “expand/collapse” an event, so that I can “show or hide” the event details.
@@ -23,9 +30,9 @@ As a “User” I should be able to “use the app offline, so that I can “see
 Feature 5 - Data visualization:
 As a “User” I should be able to “see a chart of upcoming” events, so that I see which upcoming events each city has.
 
-# Scenarios
+## Scenarios
 
-Feature 2: Show/hide an event's details
+### Feature 2: Show/hide an event's details
 
 Scenario 1: An event element is collapsed by default
 Given: User hasn't searched for anything yet
@@ -42,7 +49,7 @@ Given: User doesn't need the event details
 When: User clicks on said event
 Then: Event details will be hidden
 
-Feature 3: Specify number of events
+### Feature 3: Specify number of events
 
 Scenario 1: When user hasn’t specified a number, 32 is the default number
 Given: No number has been specified by the user
@@ -54,7 +61,7 @@ Given: User has decided on a number of events
 When: User has selected the number of events
 Then: The number of events chose by the user will be shown
 
-Feature 4: Use the app when offline
+### Feature 4: Use the app when offline
 
 Scenario 1: Show cached data when there’s no internet connection
 Given: User has no internet connection
@@ -66,7 +73,7 @@ Given: User tries to show something that is not cached
 When: user changes search filters/settings
 Then: Error message will be shown to user
 
-Feature 5: Data visualization
+### Feature 5: Data visualization
 
 Scenario 1: Show a chart with the number of upcoming events in each city
 Given: User wants to see the upcoming events
