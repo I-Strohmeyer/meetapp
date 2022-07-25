@@ -124,7 +124,7 @@ blue: #009EEC
 
 /* Event */
 
-.EventList li {
+.card {
   border: 1px solid #f2f2f2;
   border-radius: 4px 12px 12px 12px;
   color: #18171c;
@@ -197,4 +197,24 @@ hr {
   overflow: hidden;
   display: inline-block;
   width: 80%;
+}
+
+/* ________DATA VISUALiSATION_____________________ */
+.data-vis-wrapper {
+  /*border: 1px solid red; */
+  display: grid;
+  min-height: 300px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: 1fr;
+  gap: 8px;
+}
+
+.pie-wrapper {
+  /*border: 1px solid green; */
+  min-width: 49%;
+}
+
+.scatter-wrapper {
+  /*border: 1px solid blue; */
+  min-width: 49%;
 }

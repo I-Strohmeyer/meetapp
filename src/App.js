@@ -1,4 +1,13 @@
 import React, { Component } from "react";
+import {
+  ScatterChart,
+  Scatter,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 
 import EventList from "./EventList";
 import { CitySearch } from "./CitySearch";
@@ -6,6 +15,7 @@ import { NumberOfEvents } from "./NumberOfEvents";
 import { getEvents, extractLocations } from "./api";
 import { Header } from "./Header";
 import { NetworkAlert } from "./Alert";
+import { EventGenre } from "./EventGenre";
 
 import "./nprogress.css";
 import "./App.css";
@@ -69,6 +79,18 @@ class App extends Component {
     this.updateEvents(undefined, eventsNumber);
   };
 
+  getData = () => {
+    const { locations, events } = this.state;
+    const data = locations.map((location) => {
+      const number = events.filter(
+        (event) => event.location === location
+      ).length;
+      const city = location.split(", ").shift();
+      return { city, number };
+    });
+    return data;
+  };
+
   render() {
     return (
       <div className="App">
@@ -83,6 +105,37 @@ class App extends Component {
         </div>
 
         <NumberOfEvents updateNumberEvents={this.updateNumberEvents} />
+        <div className="data-vis-wrapper">
+          <div className="pie-wrapper card">
+            <EventGenre events={this.state.events} />
+          </div>
+
+          <div className="scatter-wrapper card">
+            <ResponsiveContainer>
+              <ScatterChart
+                height={300}
+                width={400}
+                margin={{
+                  top: 20,
+                  right: 20,
+                  bottom: 20,
+                  left: 20,
+                }}
+              >
+                <CartesianGrid />
+                <XAxis type="category" dataKey="city" name="City" />
+                <YAxis
+                  allowDecimals={false}
+                  type="number"
+                  dataKey="number"
+                  name="Events"
+                />
+                <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+                <Scatter data={this.getData()} fill="#009EEC" />
+              </ScatterChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
         <EventList events={this.state.events} />
       </div>
     );
