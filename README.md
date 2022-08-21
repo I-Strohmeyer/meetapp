@@ -1,10 +1,10 @@
-# MeetUp App
+# MeetUp App :raising_hand: :raising_hand_man:
 
 ## Description
 
 The Meetup App - the place to be.
-Also known as a progressive web app built with React. It uses serverless functions,
-test-driven-development and the Google Calender API while striving to provide a pleasing experience for the user.
+Also known as a progressive web app built with **React**. It uses **serverless functions**,
+**test-driven-development** and the **Google Calender API** while striving to provide a pleasing experience for the user.
 
 ## Project requirements:
 
